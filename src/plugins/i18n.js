@@ -6,12 +6,20 @@ Vue.use(VueI18n);
 
 const messages = {
     'en': {
-      welcomeMsg: 'Noah and Noemí Countdown',
-      daysLeft: 'days left'
+      pageTitle: 'Noah and Noemí',
+      countdownMessage: 'Noah and Noemí Countdown',
+      daysLeft: 'days left',
+      countdown: 'Countdown',
+      currencyConverter: 'Currency Converter',
+      language: 'Language'
     },
     'es': {
-      welcomeMsg: 'Cuenta regresiva de Noah y Noemí',
-      daysLeft: 'días restantes'
+      pageTitle: 'Noah y Noemí',
+      countdownMessage: 'Cuenta regresiva de Noah y Noemí',
+      daysLeft: 'días restantes',
+      countdown: 'Cuenta Regresiva',
+      currencyConverter: 'Convertidor de Moneda',
+      language: 'Idioma'
     }
 };
 

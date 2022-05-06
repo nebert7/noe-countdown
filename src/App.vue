@@ -1,41 +1,19 @@
 <template>
   <div id="app">
-    <Title msg="🇺🇸 Noah and Noemí Countdown 🇵🇾"/>
-    <Countdown></Countdown>
-    <div>
-      <button v-for="entry in languages" :key="entry.title" @click="changeLocale(entry.language)">
-        <flag :iso="entry.flag" v-bind:squared=false /> {{entry.title}}
-      </button>
+    <AppHeader></AppHeader>
+    <div class="ui container">
+      <router-view></router-view>
     </div>
-    <Picture></Picture>
   </div>
 </template>
 
 <script>
-import Title from './components/Title';
-import Countdown from './components/Countdown';
-import Picture from './components/Picture';
-import i18n from '@/plugins/i18n';
+import AppHeader from '@/components/AppHeader';
 
 export default {
   name: 'App',
   components: {
-    Title,
-    Countdown,
-    Picture
-  },
-  data() {
-    return {
-        languages: [
-            { flag: 'us', language: 'en', title: 'English' },
-            { flag: 'py', language: 'es', title: 'Español' }
-        ]
-    };
-  },
-  methods: {
-    changeLocale(locale) {
-        i18n.locale = locale;
-    }
+    AppHeader
   }
 }
 </script>

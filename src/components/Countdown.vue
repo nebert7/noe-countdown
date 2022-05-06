@@ -1,15 +1,24 @@
 <template>
   <div>
+    <Title msg="🇺🇸 Noah and Noemí Countdown 🇵🇾"/>
     <h1 class="display-5">
       {{ daysLeftCount }}
     </h1>
     <p>{{ $t('daysLeft') }}</p>
+    <Picture></Picture>
   </div>
 </template>
 
 <script>
+import Title from '@/components/Title';
+import Picture from '@/components/Picture';
+
 export default {
   name: 'Countdown',
+  components: {
+    Title,
+    Picture
+  },
   computed: {
     daysLeftCount() {
       var meeting = new Date("07/10/2022");

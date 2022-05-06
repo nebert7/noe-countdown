@@ -1,6 +1,6 @@
 <template>
   <div class="display-4">
-    {{ $t('welcomeMsg') }}
+    {{ $t('countdownMessage') }}
   </div>
 </template>
 
