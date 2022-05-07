@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    Currency Converter
+    <div class="display-4">Currency Converter</div>
     <div class="input-group mb-3">
       <input type="text" class="form-control" v-model="firstNumber">
       <span class="input-group-text">
@@ -22,9 +22,23 @@
     </div>
 
     Result:
-    <div v-for="entry in result" :key="entry.metadata.code">
-      {{ entry.money }} <flag :iso="entry.metadata.flag" v-bind:squared=false /> {{ entry.metadata.name }}
+  <div class="d-grid gap-3">
+    <div class="card"  v-for="entry in result" :key="entry.metadata.code">
+      <div class="card-body bg-light border">
+        <div class="container">
+          <div class="row justify-content-around">
+            <div class="col-8">
+              <h5 class="card-title">{{entry.metadata.symbol}}{{ entry.money }}</h5>
+              <h6 class="card-subtitle">{{ entry.metadata.name }}</h6>
+            </div>
+            <div class="col-4" style="font-size:34px">
+              <flag :iso="entry.metadata.flag" v-bind:squared=false />
+            </div>
+          </div>
+      </div>
+      </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -39,6 +53,7 @@ export default {
                 name: "Dollars",
                 code: "USD",
                 flag: "us",
+                symbol: "$",
                 rate: 1
               },
       currencies: [
@@ -47,6 +62,7 @@ export default {
           name: "Dollars",
           code: "USD",
           flag: "us",
+          symbol: "$",
           rate: 1
         },
         {
@@ -54,6 +70,7 @@ export default {
           name: "Guarani",
           code: "PYG",
           flag: "py",
+          symbol: "₲",
           rate: 0.00015
         },
         {
@@ -61,6 +78,7 @@ export default {
           name: "Reais",
           code: "BRL",
           flag: "br",
+          symbol: "R$",
           rate: 0.2
         }
       ],
