@@ -18,7 +18,7 @@
               <flag :iso="flag" v-bind:squared=false /> {{ $t('language') }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li v-for="entry in languages" :key="entry.title" @click="changeLocale(entry.language, entry.flag)">
+              <li class="flag-button" v-for="entry in languages" :key="entry.title" @click="changeLocale(entry.language, entry.flag)">
                 <flag :iso="entry.flag" v-bind:squared=false /> {{ entry.title }}
               </li>
             </ul>
@@ -53,4 +53,11 @@ export default {
 </script>
 
 <style scoped>
+.flag-button {
+  text-indent: 6px;
+  font-size: 16px;
+}
+.flag-button:hover {
+  background-color: LightGray;
+}
 </style>

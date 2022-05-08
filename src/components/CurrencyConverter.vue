@@ -1,29 +1,25 @@
 // Adapted from https://codepen.io/Yxng/pen/oOmbOg
 
 <template>
-  <div>
-    <div class="display-4">Currency Converter</div>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" v-model="firstNumber">
+  <div class="d-grid gap-3" style="max-width: 640px; margin: auto;">
+    <div class="display-4" style="margin: 20px;">{{ $t('currencyConverter') }}</div>
+    <div class="input-group input-group-lg">
+      <span class="input-group-text">{{ currentCurrency.symbol }}</span>
+      <input type="text" class="form-control" v-model="currentNumber">
       <span class="input-group-text">
-
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        <flag :iso="firstCurrency.flag" v-bind:squared=false /> {{ firstCurrency.code }}
+        <flag :iso="currentCurrency.flag" v-bind:squared=false /> {{ currentCurrency.code }}
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li v-for="entry in currencies" :key="entry.country" @click="firstCurrency = entry">
+        <li class="flag-button" v-for="entry in currencies" :key="entry.country" @click="currentCurrency = entry">
           <flag :iso="entry.flag" v-bind:squared=false /> {{ entry.name }}
         </li>
       </ul>
     </div>
   </span>
-
     </div>
-
-    Result:
-  <div class="d-grid gap-3">
-    <div class="card"  v-for="entry in result" :key="entry.metadata.code">
+    <div class="card" v-for="entry in result" :key="entry.metadata.code">
       <div class="card-body bg-light border">
         <div class="container">
           <div class="row justify-content-around">
@@ -39,7 +35,6 @@
       </div>
     </div>
   </div>
-  </div>
 </template>
 
 <script>
@@ -47,8 +42,8 @@ export default {
   name: 'CurrencyConverter',
   data() {
     return {
-      firstNumber: '0',
-      firstCurrency: {
+      currentNumber: '10000',
+      currentCurrency: {
                 country: "USA",
                 name: "Dollars",
                 code: "USD",
@@ -89,7 +84,7 @@ export default {
       let results = new Array();
       this.currencies.forEach(currency => {
         const resultValue = {
-          money: (this.firstNumber * (this.firstCurrency.rate / currency.rate)).toFixed(2),
+          money: (this.currentNumber * (this.currentCurrency.rate / currency.rate)).toFixed(2),
           metadata: currency
         };
         results.push(resultValue);
@@ -100,4 +95,12 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.flag-button {
+  text-indent: 6px;
+  font-size: 16px;
+}
+.flag-button:hover {
+  background-color: LightGray;
+}
+</style>
