@@ -21,7 +21,7 @@ export default {
 <style scoped>
   #app {
     background: rgb(178,228,250);
-    background: linear-gradient(0deg, rgba(178,228,250,0.7021183473389356) 0%, rgba(255,255,255,1) 44%);
+    background: linear-gradient(180deg, rgba(178,228,250,0.7021183473389356) 0%, rgba(255,255,255,1) 44%);
   }
   button {
     border-radius: 15px;
