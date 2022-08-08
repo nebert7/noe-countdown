@@ -42,7 +42,7 @@ export default {
   name: 'CurrencyConverter',
   data() {
     return {
-      currentNumber: '10000',
+      currentNumber: '100',
       currentCurrency: {
                 country: "USA",
                 name: "Dollars",
@@ -74,7 +74,7 @@ export default {
           code: "BRL",
           flag: "br",
           symbol: "R$",
-          rate: 0.2
+          rate: 0.19
         }
       ],
     }
