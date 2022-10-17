@@ -4,7 +4,7 @@
     <h1 class="display-5">
       {{ daysLeftCount }}
     </h1>
-    <p>{{ $t('daysLeft') }}??? 🤔🤔🙏🙏</p>
+    <p>{{ $t('daysLeft') }}</p>
     <Picture></Picture>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     daysLeftCount() {
-      var meeting = new Date("08/14/2023");
+      var meeting = new Date("07/14/2023");
       var Difference_In_Time = meeting.getTime() - Date.now();
       var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
       return Math.ceil(Difference_In_Days);
