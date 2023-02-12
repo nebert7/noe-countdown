@@ -7,6 +7,7 @@ import FlagIcon from 'vue-flag-icon';
 
 import Countdown from '@/components/Countdown';
 import CurrencyConverter from '@/components/CurrencyConverter';
+import Valentine from '@/components/Valentine';
 
 Vue.use(FlagIcon);
 Vue.config.productionTip = false;
@@ -17,7 +18,8 @@ export const router = new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', component: Countdown },
-    { path: '/currency', component: CurrencyConverter }
+    { path: '/currency', component: CurrencyConverter },
+    { path: '/valentines', component: Valentine}
   ]
 });
 
